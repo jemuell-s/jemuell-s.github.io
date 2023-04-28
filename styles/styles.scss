@@ -60,25 +60,36 @@ section {
 .sec1 {
     display: none;
     transform: translateY(0) scale(1);
-    background-color: yellowgreen;
 }
 
 .sec2 {
     display: none;
     transform: translateY(0) scale(1);
-    background-color: slateblue;
 }
 
 .sec3 {
     display: none;
     transform: translateY(0) scale(1);
-    background-color: grey;
 }
 
 .sec4 {
     display: none;
     transform: translateY(0) scale(1);
-    background-color: peru;
+}
+
+.active {
+    display: block;
+
+    animation: scaleAnim 1s ease-in-out;
+    @keyframes scaleAnim {
+        0% {
+            transform: translateY(-100%) scaleY(0);
+        }
+
+        100% {
+            transform: translateY() scaleY(1);
+        }
+    }
 }
 
 // Controls 
@@ -119,3 +130,66 @@ section {
         }
     }
 }
+
+/* Header-content */
+.header-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100%;
+
+    .left-header {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        .h-shape {
+            transition: all .4s ease-in-out;
+            width: 65%;
+            height: 100%;
+            background-color: var(--color-secondary);
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            clip-path: polygon(0 0, 45% 0, 79% 100%, 0% 100%);
+        }
+
+        .image {
+            border-radius: var(--br-sm-2);
+            height: 30%;
+            width: 30%;
+            // margin-top: 5rem;
+            margin-left: 4rem;
+            transition: all .4s ease-in-out;
+
+            img {
+                width: 80%;
+                height: 100%;
+                object-fit: cover;
+                transition: all .4s ease-in-out;
+                &:hover {
+                    filter: grayscale(100%);
+                }
+            }
+        }
+    }
+
+    .right-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 18rem;
+        .name {
+            font-size: 3rem;
+            span {
+                color: var(--color-secondary);
+            }
+        }
+        p {
+            margin: 1.5rem;
+            line-height: 2rem;
+        }
+    }
+}
+
+/* */

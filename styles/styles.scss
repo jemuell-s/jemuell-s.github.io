@@ -7,7 +7,7 @@
 
 :root {
     --color-primary: #191d2b;
-    --color-secondary: #27AE60;
+    --color-secondary: #aa5103;
     --color-white: #FFFFFF;
     --color-black: #000;
     --color-grey0: #f8f8f8;
@@ -19,6 +19,7 @@
     --color-grey-6: #12181b;
     --br-sm-2: 14px;
     --box-shadow-1: 0 3px 15px rgba(0, 0, 0, .3);
+    --transition-animation: all .4s ease-in-out;
 }
 
 body { 
@@ -26,7 +27,7 @@ body {
     font-family: 'Urbanist', sans-serif;
     font-size: 1.1rem;
     color: var(--color-white);
-    transition: all .4s ease-in-out;
+    transition: var(--transition-animation);
 }
 
 a {
@@ -53,7 +54,7 @@ section {
 
 .section {
     transform: translateY(-100%);
-    transition: all .4s ease-in-out;
+    transition: var(--transition-animation);
     background-color: var(--color-primary);
 }
 
@@ -106,7 +107,7 @@ section {
 
     .active-btn {
         background-color: var(--color-secondary) !important;
-        transition: all .4s ease-in-out;
+        transition: var(--transition-animation);
         i {
             color: var(--color-white) !important;
         }
@@ -135,7 +136,7 @@ section {
 .header-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    height: 100%;
+    height: 100%;   
 
     .left-header {
         display: flex;
@@ -143,7 +144,7 @@ section {
         position: relative;
 
         .h-shape {
-            transition: all .4s ease-in-out;
+            transition: var(--transition-animation);
             width: 65%;
             height: 100%;
             background-color: var(--color-secondary);
@@ -151,22 +152,21 @@ section {
             left: 0;
             top: 0;
             z-index: -1;
-            clip-path: polygon(0 0, 45% 0, 79% 100%, 0% 100%);
+            clip-path: polygon(0 0, 60% 0, 79% 100%, 0% 100%);
         }
 
         .image {
             border-radius: var(--br-sm-2);
-            height: 30%;
-            width: 30%;
-            // margin-top: 5rem;
+            height: 90%;
+            width: 68%;
             margin-left: 4rem;
-            transition: all .4s ease-in-out;
+            transition: var(--transition-animation);
 
             img {
-                width: 80%;
+                width: 100%;
                 height: 100%;
                 object-fit: cover;
-                transition: all .4s ease-in-out;
+                transition: var(--transition-animation);
                 &:hover {
                     filter: grayscale(100%);
                 }
@@ -177,10 +177,10 @@ section {
     .right-header {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: right;
         padding-right: 18rem;
         .name {
-            font-size: 3rem;
+            font-size: 2rem;
             span {
                 color: var(--color-secondary);
             }
@@ -191,5 +191,3 @@ section {
         }
     }
 }
-
-/* */
